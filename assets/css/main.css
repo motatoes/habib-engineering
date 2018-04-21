@@ -17,6 +17,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+		height: 100%;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -3013,16 +3014,27 @@
 /* Wrapper */
 
 	#wrapper {
+	  display: -webkit-box;
+	  display: -moz-box;
+	  display: -ms-flexbox;
+	  display: -webkit-flex;
+	  display: flex;
+	  flex-direction: column;
+	  align-content: center;
+	  justify-content: space-between;
+	  flex-wrap: nowrap;
 		-moz-transition: opacity 0.5s ease;
 		-webkit-transition: opacity 0.5s ease;
 		-ms-transition: opacity 0.5s ease;
 		transition: opacity 0.5s ease;
 		position: relative;
 		z-index: 1;
-		overflow: hidden;
+		/*overflow: hidden;*/
+		width: 100%;
+		height: 100%;
 	}
 
-		#wrapper > .bg {
+		.bg {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -3037,7 +3049,7 @@
 			z-index: -1;
 		}
 
-			#wrapper > .bg.fixed {
+			.bg.fixed {
 				position: fixed;
 				width: 100vw;
 				height: 100vh;
@@ -3073,7 +3085,7 @@
 
 		@media screen and (orientation: portrait) {
 
-			#wrapper > .bg {
+			.bg {
 				background-size: auto, auto, auto 120%;
 				background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg_portrait-optim.jpg");
 
@@ -3086,23 +3098,26 @@
 	.logo {
 		margin: 0 auto;
 		margin-top: 25px;
-		width: 200px;
+		border: 2px solid #ccc;
+		/*width: 33%;	*/	
 		height: auto;
-		min-height: 10vh;
-		border: 1px solid #ccc;
+		display:table;		
+
 	}
 
 	.logo img {
-		width: 100%;
+		margin: 0 auto;
 	}
 
 	#intro {
 		color: #ffffff;
-		padding: 8rem 4rem 6rem 4rem ;
-		-moz-align-items: center;
-		-webkit-align-items: center;
-		-ms-align-items: center;
-		align-items: center;
+		height: auto;
+		/*flex-grow: 1;*/
+		padding: 0rem 4rem 0rem 4rem ;
+		/*-moz-align-items: center;*/
+		/*-webkit-align-items: center;*/
+		/*-ms-align-items: center;*/
+		/*align-items: center;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -3114,7 +3129,7 @@
 		-moz-justify-content: -moz-flex-end;
 		-webkit-justify-content: -webkit-flex-end;
 		-ms-justify-content: -ms-flex-end;
-		justify-content: start;
+		justify-content: start;*/
 		-moz-transition: opacity 1s ease, -moz-transform 1s ease;
 		-webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
 		-ms-transition: opacity 1s ease, -ms-transform 1s ease;
@@ -3123,7 +3138,7 @@
 		cursor: default;
 		text-align: center;
 		z-index: 1;
-		min-height: 80vh;
+		min-height: 20vh;
 	}
 
 		#intro input, #intro select, #intro textarea {
@@ -3268,7 +3283,7 @@
 
 			#intro {
 				padding: 4rem 4rem 2rem 4rem ;
-				min-height: 90vh;
+				/*min-height: 90vh;*/
 			}
 
 				#intro p br {
@@ -3285,7 +3300,7 @@
 
 			#intro {
 				padding: 3rem 2rem 1rem 2rem ;
-				min-height: 80vh;
+				/*min-height: 80vh;*/
 			}
 
 				#intro h1 {
@@ -3785,10 +3800,17 @@
 	}
 
 	#footer2 {
-		position: fixed;
-		right: 30px;
-		bottom: 10px;
+		width: 100%;
+		height: auto;
+		padding-right: 30px;
+		padding-bottom: 20px; 
+	}
+
+	#footer2 > p {
+		height: auto;
 		text-align: right;
+		padding: 0;
+		margin: 0;		
 	}
 
 	#footer2 strong, #footer2 a {
